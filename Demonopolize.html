@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!-- saved from url=(0193)https://abiestorage.blob.core.windows.net/statichtml/demonopolize.html -->
+<!DOCTYPE html PUBLIC "" "">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        .footer {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            /*left: 0;*/
+            padding: 1rem;
+            /*background-color: #efefef;*/
+            text-align: center;
+        }
+
+        #Searchbox {
+            width: 500px;
+        }
+
+        .maincontent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40em;
+            height: 18em;
+            margin-top: -350px; /*set to a negative number 1/2 of your height*/
+            margin-left: -350px; /*set to a negative number 1/2 of your width*/
+            /*border: 1px solid #ccc;*/
+            /*background-color: #f3f3f3;*/
+            -webkit-animation: fadein 6s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 6s; /* Firefox < 16 */
+            -ms-animation: fadein 6s; /* Internet Explorer */
+            -o-animation: fadein 6s; /* Opera < 12.1 */
+            animation: fadein 6s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        /* Firefox < 16 */
+        @-moz-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        /* Safari, Chrome and Opera > 12.1 */
+        @-webkit-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        /* Opera < 12.1 */
+        @-o-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <meta content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="GENERATOR" content="MSHTML 11.00.9600.18792">
+</head>
+<body>
+    <div class="maincontent" style="text-align: center; height: 600px; width: 700px;">
+        <header style="line-height:5px;">
+            <img src="https://abiestorage.blob.core.windows.net/statichtml/demon_opolize.png" style="width: 120px; height: 129px;" />
+            <h1 style="font-size: 3em; color: #0099FF;">Demonopolize.com</h1>
+            <span class="MsoNormal"><b>Variety with convenience.</b></span>
+        </header>
+        <p>
+            <span style="font-size: 2em;">Search sites for: </span>
+            <input style="font-size: 1.2em;" id="Searchbox" type="text">
+        </p>
+        <div style="line-height:5px;">
+            <p style="color: #0099FF">
+                Easy search tool to bridge the
+                gap between major companies and the rest of the
+                internet.
+            </p>
+            <br />
+            <div style="line-height:5px;">
+                <button onclick="SearchWeb()">Search Web</button>
+                <button onclick="SearchSocial()">Search Social</button>
+                <button onclick="SearchVideo()">Search Video</button>
+                <button onclick="SearchImages()">Search Images</button>
+                <button onclick="SearchShopping()">Search Shopping</button>
+                <button onclick="CryptoCharts()">Crypto Charts</button>
+                <br />
+                <br />
+                <button onclick="SearchAll()">Search All</button>
+            </div>
+        </div>
+        <div>
+            <p style="color: #999999">
+                <i>
+                    <span style='font-family: "Times New Roman",serif; font-size: 12pt;'>
+                        This website
+                        requires a browser that is configured to support script and opening <b style="color: black">
+                            multiple
+                            tabs (Firefox recommended)
+                        </b>.
+                    </span>
+                    <span style='font-family: "Times New Roman",serif; font-size: 12pt;'>
+                        For equerries,
+                        feedback or suggestions, email me at: <a href="mailto:razza1083@live.co.uk">
+                            <span style="font-style: normal;">razza1083@live.co.uk</span>
+                        </a>.<o:p></o:p>
+                    </span>
+                    <span style='font-family: "Times New Roman",serif; font-size: 12pt;'>
+                        If you like this tool, please donate to BTC address show.
+                    </span>
+                    <span>
+                        <b style="color: black">This is an open source project</b> and anyone can contribute at: <a href="https://github.com/daezohn/DemonopolizePublicGit" target="_blank">github.com/daezohn/DemonopolizePublicGit</a>
+                    </span>
+                </i>
+            </p>
+            <p>
+                <img src="https://abiestorage.blob.core.windows.net/statichtml/Bitcoin.png" alt="BTC" />
+                1BwqzqWKi1TMh3rsJ9rwiVB8h3PyNEqa3
+            </p>
+            <p>
+                <img style="width: 132px; height: 132px;" alt="" src="https://abiestorage.blob.core.windows.net/statichtml/btcqr.png"><i><span style='font-family: "Times New Roman",serif; font-size: 12pt;'><o:p></o:p></span></i>
+            </p>
+            <p id="message" style="text-align: right;">
+                <span style="font-style: italic;"></span>
+            </p>
+
+        </div>
+    </div>
+    <!--    <footer class="footer">
+    </footer>-->
+    <script>
+        var isChrome = false;
+        (function () {
+            isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        })();
+
+        var searchText = ''
+        function PrepSearch() {
+            searchText = document.getElementById("Searchbox").value;
+            //document.getElementById("message").innerHTML = searchText;
+        }
+
+        function SearchWeb() {
+            PrepSearch();
+            // Web search (screw Google)
+            NewTab('https://duckduckgo.com/?q=');
+            NewTab('https://www.qwant.com/?q=');
+            //NewTab('https://www.searx.me/');
+            //NewTab('https://search.wikileaks.org/?q=');
+            //NewTab('https://www.startpage.com/do/search');
+        }
+
+        function SearchSocial() {
+            PrepSearch();
+            // Social search (screw Facebook)
+            NewTab('https://www.minds.com/search;q=');
+            NewTab('https://gab.ai/search/');
+            //NewTab('https://steemit.com/'); // Partly blockchian decentralized
+            //NewTab('http://www.synereo.com/'); //Full blockchain  decentralized
+            //NewTab('http://www.4chan.org/');
+            NewTab('https://www.reddit.com/search?q=');
+        }
+
+        function SearchVideo() {
+            PrepSearch();
+            // Video search (screw Youtube)
+            window.open('https://www.bitchute.com/search/?q=' + searchText + '&sort=date_created+desc', '_newtab' + idx++);
+            NewTab('https://dtube.video/#!/s/'); // Partly blockchian decentralized
+            NewTab('http://www.dailymotion.com/search/');
+            NewTab('https://vid.me/search?q=');
+            NewTab('https://www.patreon.com/search?q=');
+            NewTab('https://vimeo.com/search?q=');
+            NewTab('https://www.liveleak.com/browse?q=');
+            //NewTab('http://zippcast.com/?s='); //Not working
+            NewTab('http://www.metacafe.com/videos_about/');
+            //NewTab('https://go.twitch.tv/'); //Not working
+            NewTab('http://www.mefeedia.com/search/');
+        }
+
+        function SearchImages() {
+            PrepSearch();
+            // Image search (scew Instagram)
+            NewTab('https://imgur.com/search?q=');
+            NewTab('https://www.tumblr.com/search/');
+        }
+
+        function SearchShopping() {
+            PrepSearch();
+            // Shopping search (screw Amazon)
+            //NewTab('https://www.openbazaar.org/');  //Full blockchain  decentralized
+            NewTab('https://www.overstock.com/search?keywords='); //Accepts bitcoin
+        }
+
+        function CryptoCharts() {
+            PrepSearch();
+            // Search crypto price charts
+            NewTab('https://www.cryptocompare.com/coins/');
+            NewTab('https://coinmarketcap.com/currencies/');
+        }
+
+
+        function SearchAll() {
+            PrepSearch();
+            SearchWeb();
+            SearchSocial();
+            SearchVideo();
+            SearchImages();
+            SearchShopping();
+        }
+
+        //var linkArray = [];
+        var idx = 1;
+        function NewTab(site) {
+            //window.open(site + searchText, '_newtab' + idx++);
+            if (isChrome) {
+                window.open(site + searchText);
+                //chrome.browserAction.onClicked.addListener(function (activeTab) {
+                //    var newURL = site + searchText;
+                //    chrome.tabs.create({ url: newURL });
+                //});
+            }
+            else {
+                window.open(site + searchText);
+            }
+        }
+
+        function ChoromeTabs() {
+
+        }
+
+    </script>
+</body>
+</html>
